@@ -41,7 +41,12 @@ a .ui-bar-inherit{
 .menu_grande{
     display: none;
 }*/
-
+.servicios_arreglo{
+    background-color: #362F27 !important;
+    color: #E0750C !important;
+    border: none !important;
+    border-radius: 0.675rem !important;
+}
 .arreglo_a_edit{
     color: #000 !important;
 }
@@ -69,7 +74,7 @@ a .ui-bar-inherit{
 }
 
 .botones_distintos{
-    color: #308cf5 !important;
+    color: #44403c !important;
 }
 
 .formulario_arreglo{
@@ -90,6 +95,7 @@ a .ui-bar-inherit{
     height: 125px;
 }
 */
+
 footer{
     font-weight: bold;
     background-color: #E0750C !important;
@@ -166,13 +172,35 @@ nav ul li a{
     padding: 2px 15px !important;
 }
 
+.arreglo-calificacion{
+    margin-left: 0 !important;
+}
+.arreglo-calificacion > *{
+  width: 50px !important;
+  justify-content: center !important;
+}
+.arreglo-calificacion img{
+    padding: 0 !important;
+}
+.arreglo-calificacion_atras{
+    width: 130px !important;
+    margin-top: 5px;
+}
+.arreglo-calificacion_3{
+    width: 100% !important;
+}
+.arreglo-calificacion_4{
+    width: 130px !important;
+}
 .arreglo_card{
     background-color: #362F27;
     color: #E0750C; 
    /* padding-bottom: 2em;*/
 }
 
-
+.arreglo-calificacion_4{
+    width: 100% !important;
+}
 
 .arreglo_lista_contactos{
     background-color: #E0750C;
@@ -190,8 +218,8 @@ nav ul li a{
 }
 
 .span_contactos{
-    font-weight: bold;
-    color: #44403c;
+   /* font-weight: bold;*/
+    color: #fff; /*44403c*/
 }
 
 .select{
@@ -228,7 +256,7 @@ nav ul li a{
 }
 
 .trabajos_arte{
-    border-radius: 0.865rem;
+    border-radius: 0.675rem;
 }
 
 .trabajos_arte img{

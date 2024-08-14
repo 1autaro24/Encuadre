@@ -46,7 +46,7 @@ require_once 'secciones/conexion.php'; ?>
 
                         <?php else: ?>
                         
-                            <li class="nav__li"><a href="acciones/logout.php" >Log out</a></li>
+                            <li class="nav__li"><a href="acciones/logout.php" class="botones_distintos" >Log out</a></li>
                          <?php endif; ?>                   
 
                         </ul>

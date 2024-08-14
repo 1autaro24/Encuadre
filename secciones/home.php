@@ -65,14 +65,14 @@ while ($fila = mysqli_fetch_assoc($res)) {
     $servicios[] = $fila;
 };  ?>
 
-<div class="container mt-3">
+<div class="container mt-3 ">
     <h2 class="text-center color_cosas"style="padding: 20px 0; margin: 0 !important;"><strong>¿QUÉ SERVICIOS OFRECEMOS?</strong></h2>
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
         <?php
           foreach ($servicios as $servicio): 
-            echo '<div class="color_cosas">';
-            echo '<div class="card color_fondo color_ cosas carta_ppal h-100">';
-            echo '<div class="col d-flex justify-content-center">';
+            echo '<div>';
+            echo '<div class="card servicios_arreglo h-100">';
+            echo '<div class=" d-flex justify-content-center">';
             echo '<img class="img-fluid rounded-start mt-4" src="recursos/img/servicios/' . $servicio['ICON'] . '" alt="servicio" > </div>';
             echo '<div class="card-body">';
             echo '<h4 class="card-title text-center" style="text-transform:uppercase;"><span class="nombre">' . $servicio['SERVICIO'] . '</span></h4>';

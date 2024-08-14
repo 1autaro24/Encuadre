@@ -94,7 +94,7 @@ endif;
     
         foreach ($trabajos as $trabajo):
             echo '<div class="col-sm-12 col-md-6 col-lg-4">';
-            echo '<div class="card arreglo_card">';
+            echo '<div class="card arreglo_card trabajos_arte">';
             echo '<img class="card-img-top mt-3 " src="recursos/img/portfolio/' . $trabajo['FOTO'] . '" alt="foto trabajo">';
             echo '<div class="card-body">';
             echo '<div class="elarreglador">';
@@ -104,23 +104,23 @@ endif;
             echo '<div class="collapse popup" id="extra'.$trabajo['ID'].'"><p class="card-text text-center">' . $trabajo['DESCRIPCION'] . '</p>';
             echo '<p   class="card-text text-center"> <strong style="text-decoration: underline solid 2px #E0750C">Realizado por</strong>: ' . $trabajo['NOMBRE'] . ' '. $trabajo['APELLIDO'] . '<br>' . $trabajo['EMAIL'] . '<br> </p>';
             echo '<p   class="card-text text-center"> <small><span style="text-decoration: underline solid 2px #E0750C">Tag:</span> ' . $trabajo['SERVICIO'] . '<br> </small> </p>';
-            echo '<div class="container color_fondo_negro"><div class="row">';
+            echo '<div class="container color_fondo_negro"><div class="row arreglo-calificacion">';
             if (isset($_SESSION['usuario'])):
                 $tieneCalificacion = false;
                 foreach ($calificaciones as $calificacion):
                     if ($calificacion['FK_TRABAJO_CALIFICACION'] === $trabajo['ID']) $tieneCalificacion = true;
                 endforeach;
                 if ($tieneCalificacion):
-                    echo '<p>Ya calificaste este trabajo :)</p>';
+                    echo '<p class="arreglo-calificacion_3">Ya calificaste este trabajo :)</p>';
                 else:
-                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=1"><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i></a>';
-                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=2"><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i></a>';
-                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=3"><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i></a>';
-                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=4"><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i></a>';
-                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=5"><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i></a>';
+                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=1"><i"><img  style="width:30px;  height:30px;" src="recursos/img/estrella2.png" alt="estrella foto"></i></a>';
+                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=2"><i"><img  style="width:30px;  height:30px;" src="recursos/img/estrella2.png" alt="estrella foto"></i></a>';
+                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=3"><i"><img  style="width:30px;  height:30px;" src="recursos/img/estrella2.png" alt="estrella foto"></i></a>';
+                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=4"><i"><img  style="width:30px;  height:30px;" src="recursos/img/estrella2.png" alt="estrella foto"></i></a>';
+                    echo '<a href="acciones/calificar.php?idTrabajo=' . $trabajo['ID'] . '&calificacion=5"><i"><img  style="width:30px;  height:30px;" src="recursos/img/estrella2.png" alt="estrella foto"></i></a>';
                 endif;
             else:
-                echo '<div class="col-8"><p class="fst-italic arreglo_calificar">Para calificar, necesitás iniciar sesión</p></div>';
+                echo '<div class="arreglo-calificacion_4" ><p class="fst-italic">Para calificar, necesitás iniciar sesión</p></div>';
             endif;
             
 
@@ -134,7 +134,7 @@ endif;
                 $res = mysqli_query($conexion, $damePromedios);
                 $promedio = mysqli_fetch_assoc($res);
                         
-                echo '<div class="col-4"><p><i><img  style="width:30px;  height:30px;" src="recursos/img/estrella.png" alt="estrella foto"></i> <span>'.$promedio['PROMEDIO'].'</span></p></div>';
+                echo '<div ><p class="arreglo-calificacion_atras">Promedio: <span>'.$promedio['PROMEDIO'].'</span></p></div>';
             
             echo '</div>';          
             echo '</div>';
@@ -142,6 +142,7 @@ endif;
             echo '</div>';
             echo '</div>';
             echo '</div>';
+            
         endforeach;
         ?> 
         

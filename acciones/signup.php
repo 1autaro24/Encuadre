@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ):
         die;
     else:
         $mail = mysqli_real_escape_string ($conexion, $_POST['email']);
-        $chequearMail = "SELECT usuarios.email FROM id22111537_abstract_less.usuarios WHERE usuarios.email = '$mail' LIMIT 1;";
+        $chequearMail = "SELECT usuarios.email FROM _final.usuarios WHERE usuarios.email = '$mail' LIMIT 1;";
         $res = mysqli_query($conexion, $chequearMail);
         $existeMail = mysqli_fetch_assoc($res);
         if ($existeMail):
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ):
         $contrasenia = password_hash($_POST['password'], PASSWORD_DEFAULT);
     endif;        
         $crearUsuario = "
-    INSERT INTO id22111537_abstract_less.usuarios
+    INSERT INTO _final.usuarios
     (NOMBRE_DE_USUARIO, EMAIL, CONTRASENIA, FK_ROL)
     VALUES
     ('$nombre', '$mail', '$contrasenia', 2);
